@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
+Super.destroy_all
+
+10.times do |i|
+  Super.create(name:Faker::Superhero.name, power:Faker::Superhero.power)
+end
+
+
+
+puts "Superhero's #{Super.all.size}"
+  
